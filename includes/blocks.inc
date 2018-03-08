@@ -671,6 +671,8 @@ function islandora_solr_advanced_search_form($form, &$form_state) {
       if ((variable_get('islandora_solr_search_boolean', 'user') == 'user') && ((count($values['terms']) - 1) != $i)) {
         $term['boolean'] = array(
           '#type' => 'select',
+          '#title' => t('Operator'),
+          '#title_display' => 'invisible',
           '#prefix' => '<div>',
           '#suffix' => '</div>',
           '#default_value' => isset($value['boolean']) ? $value['boolean'] : 'AND',
